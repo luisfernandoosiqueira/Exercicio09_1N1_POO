@@ -47,9 +47,26 @@ public class Cafeteria {
         System.out.println("Café com Leite adicionado. Preço: R$ " + String.format("%.2f", precoCafeComLeite));
     }
 
+    public void removerLatte() {
+        if (qtdLatte > 0) {
+            qtdLatte--;
+            System.out.println("Latte removido.");
+        } else {
+            System.out.println("Não há Latte para remover.");
+        }
+    }
+
+    public void removerCafeComLeite() {
+        if (qtdCafeComLeite > 0) {
+            qtdCafeComLeite--;
+            System.out.println("Café com Leite removido.");
+        } else {
+            System.out.println("Não há Café com Leite para remover.");
+        }
+    }
+
     public void realizarPagamentoParcial() {
         System.out.println("Pagamento parcial realizado: R$ " + String.format("%.2f", totalDaConta()));
-        // Zerar as quantidades após o pagamento parcial
         qtdLatte = 0;
         qtdCapuccino = 0;
         qtdCafeComLeite = 0;
@@ -61,9 +78,7 @@ public class Cafeteria {
         System.out.println("Capuccino: " + qtdCapuccino + " x R$ " + String.format("%.2f", precoCapuccino) + " = R$ " + String.format("%.2f", subtotalCapuccino()));
         System.out.println("Café com Leite: " + qtdCafeComLeite + " x R$ " + String.format("%.2f", precoCafeComLeite) + " = R$ " + String.format("%.2f", subtotalCafeComLeite()));
         System.out.println("Total a pagar: R$ " + String.format("%.2f", totalDaConta()));
-        System.out.println("Pagamento total realizado. Volte Sempre!");
 
-        // Zerar as quantidades após o pagamento total
         qtdLatte = 0;
         qtdCapuccino = 0;
         qtdCafeComLeite = 0;
@@ -85,6 +100,7 @@ public class Cafeteria {
         return subtotalLatte() + subtotalCapuccino() + subtotalCafeComLeite();
     }
 }
+
 
 
 

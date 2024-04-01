@@ -36,10 +36,12 @@ public class Program {
 
         while (true) {
             System.out.println("Escolha uma opção: \n"
-                    + "1 - Latte \n"
-                    + "2 - Capuccino \n"
-                    + "3 - Café com Leite \n"
-                    + "4 - Finalizar e pagar");
+                    + "1 - Adicionar Latte \n"
+                    + "2 - Adicionar Capuccino \n"
+                    + "3 - Adicionar Café com Leite \n"
+                    + "4 - Remover Latte \n"
+                    + "5 - Remover Café com Leite \n"
+                    + "6 - Finalizar e pagar");
 
             int opcao = ler.nextInt();
 
@@ -54,6 +56,12 @@ public class Program {
                     cafeteria.adicionarCafeComLeite();
                     break;
                 case 4:
+                    cafeteria.removerLatte();
+                    break;
+                case 5:
+                    cafeteria.removerCafeComLeite();
+                    break;
+                case 6:
                     cafeteria.realizarPagamentoTotal();
                     ler.close();
                     return; // Encerra o programa após o pagamento total
